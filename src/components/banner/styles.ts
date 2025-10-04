@@ -25,7 +25,7 @@ export const Cozinha = styled.p`
   color: ${cores.brancoItens};
 `
 export const Titulo = styled.h1`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 900;
 `
 export const Container = styled.div`
