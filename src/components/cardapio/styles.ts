@@ -13,8 +13,6 @@ export const Card = styled.div`
   }
 `
 export const Headline = styled.div`
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 8px;
 `
 export const Content = styled.div`

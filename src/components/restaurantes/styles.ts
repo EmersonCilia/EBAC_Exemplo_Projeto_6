@@ -3,9 +3,10 @@ import { cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${cores.brancoItens};
-  position: relative;
   color: ${cores.salmao};
+  position: relative;
   border: 1px solid ${cores.salmao};
+  height: 100%;
 
   > img {
     width: 100%;
