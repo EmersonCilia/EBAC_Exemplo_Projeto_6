@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+import { Restaurante } from '../../models/Items'
+
 import logo from '../../assets/images/logo.png'
 
 import ProductList from '../../components/productList'
-import { Restaurante } from '../../models/Items'
 import Banner from '../../components/banner'
 import Footer from '../../components/footer'
 

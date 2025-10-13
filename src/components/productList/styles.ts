@@ -11,4 +11,5 @@ export const List = styled.ul<Omit<Props, 'items'>>`
     $variant === 'prato' ? '1fr 1fr 1fr' : '1fr 1fr'};
   gap: ${({ $variant }) => ($variant === 'prato' ? '32px' : '48px 80px')};
   margin-bottom: 40px;
+  min-height: 800px;
 `
