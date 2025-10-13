@@ -4,37 +4,38 @@ import estrela from '../../assets/images/estrela.png'
 import Button from '../button'
 
 type Props = {
-  title: string
-  grade?: string
-  description: string
-  info?: string[]
-  image: string
-  to: string | '#'
+  titulo: string
+  avaliacao: number
+  descricao: string
+  tipo: string
+  capa: string
+  destacado: boolean
+  to: string
 }
 const Restaurantes = ({
-  title,
-  grade,
-  description,
-  info,
-  image,
+  titulo,
+  avaliacao,
+  descricao,
+  tipo,
+  capa,
+  destacado,
   to
 }: Props) => (
   <Card>
-    <img src={image} alt="placeholder" />
+    <img src={capa} alt={`cozinha ${titulo}`} />
     <Infos>
-      {info?.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
+      <Tag>{tipo}</Tag>
+      {destacado && <Tag>Destaque da semana</Tag>}
     </Infos>
     <Content>
       <Headline>
-        <h3>{title}</h3>
+        <h3>{titulo}</h3>
         <Nota>
-          {grade}
+          {avaliacao}
           <img src={estrela} alt="estrela" />
         </Nota>
       </Headline>
-      <Descricao>{description}</Descricao>
+      <Descricao>{descricao}</Descricao>
       <Button to={to} title={'saiba mais'}>
         Saiba mais
       </Button>

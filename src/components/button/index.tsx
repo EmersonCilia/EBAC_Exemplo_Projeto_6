@@ -3,20 +3,18 @@ type Props = {
   title: string
   to?: string
   onClick?: () => void
-  children: string
+  children: React.ReactNode
 }
 
-const Button = ({ title, to, onClick, children }: Props) => {
-  return (
-    <ButtonLink
-      className="card-button"
-      to={to as string}
-      title={title}
-      onClick={onClick}
-    >
-      {children}
-    </ButtonLink>
-  )
-}
+const Button = ({ title, to, onClick, children }: Props) => (
+  <ButtonLink
+    className="card-button"
+    to={to as string}
+    title={title}
+    onClick={onClick}
+  >
+    {children}
+  </ButtonLink>
+)
 
 export default Button

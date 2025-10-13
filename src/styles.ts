@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const cores = {
   brancoBackground: '#FFF8F2',
@@ -23,6 +23,22 @@ export const GlobalCss = createGlobalStyle`
   .container{
     max-width: 1024px;
     width: 100%;
+    margin: 0 auto;
+  }
+`
+export const Container = styled.div`
+  width: 100%;
+  height: 384px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    display: block;
     margin: 0 auto;
   }
 `

@@ -6,6 +6,11 @@ export const Card = styled.div`
   position: relative;
   color: ${cores.salmao};
   border: 1px solid ${cores.salmao};
+
+  > img {
+    width: 100%;
+    height: 218px;
+  }
 `
 export const Infos = styled.div`
   position: absolute;
@@ -29,8 +34,9 @@ export const Nota = styled.span`
 `
 export const Descricao = styled.p`
   line-height: 22px;
+  min-height: calc(22px * 5);
   font-size: 14px;
-  font-weight: 400px;
+  font-weight: 400;
   margin-bottom: 16px;
-  white-space: pre-line;
+  text-align: justify;
 `

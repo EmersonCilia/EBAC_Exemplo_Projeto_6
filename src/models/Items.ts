@@ -1,27 +1,19 @@
-export default class Items {
-  grade?: string
-  description: string
-  image: string
-  info?: string[]
-  title: string
+export interface CardapioItem {
   id: number
-  to: string
+  nome: string
+  descricao: string
+  preco: number
+  porcao: string
+  foto: string
+}
 
-  constructor(
-    id: number,
-    description: string,
-    image: string,
-    title: string,
-    to: string,
-    grade?: string,
-    info?: string[]
-  ) {
-    this.id = id
-    this.grade = grade ?? ''
-    this.description = description
-    this.image = image
-    this.info = info ?? []
-    this.title = title
-    this.to = to
-  }
+export type Restaurante = {
+  capa: string
+  id: number
+  titulo: string
+  destacado: boolean
+  avaliacao: number
+  tipo: string
+  descricao: string
+  cardapio: CardapioItem[]
 }

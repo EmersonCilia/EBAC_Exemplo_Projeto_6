@@ -37,3 +37,18 @@ export const Container = styled.div`
   text-align: left;
   color: ${cores.brancoItens};
 `
+export const Elements = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p,
+  a {
+    width: 200px;
+    color: ${cores.salmao};
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+`

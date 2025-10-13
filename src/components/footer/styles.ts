@@ -14,6 +14,11 @@ export const Container = styled.div`
     display: block;
     margin: 0 auto;
   }
+  > img {
+    min-idth: 120px;
+    min-height: 40px;
+    object-fit: contain;
+  }
 `
 export const SocialMedia = styled.div`
   display: flex;

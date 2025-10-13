@@ -2,7 +2,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { GlobalCss } from './styles'
 
-import Footer from './components/footer'
 import Rotas from './routes'
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
       <BrowserRouter>
         <GlobalCss />
         <Rotas />
-        <Footer />
       </BrowserRouter>
     </>
   )

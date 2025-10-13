@@ -1,43 +1,51 @@
 import { Container, List } from './styles'
-import Items from '../../models/Items'
+import { CardapioItem, Restaurante } from '../../models/Items'
 import Restaurantes from '../restaurantes'
-import Pratos from '../pratos'
+import Cardapio from '../cardapio'
 
 export type Props = {
   $variant: 'restaurante' | 'prato'
-  items: Items[]
+  restaurante?: Restaurante[]
+  cardapio?: CardapioItem[]
 }
 
-const ProductList = ({ items, $variant }: Props) => (
-  <Container>
-    <div className="container">
-      <List $variant={$variant}>
-        {$variant === 'restaurante' &&
-          items.map((restaurante) => (
-            <Restaurantes
-              key={restaurante.id}
-              description={restaurante.description}
-              image={restaurante.image}
-              info={restaurante.info}
-              title={restaurante.title}
-              grade={restaurante.grade}
-              to={restaurante.to}
-            />
-          ))}
+const ProductList = ({ restaurante, $variant, cardapio }: Props) => {
+  return (
+    <Container>
+      <div className="container">
+        <List $variant={$variant}>
+          {$variant === 'restaurante' &&
+            restaurante?.map((r) => (
+              <li key={r.id}>
+                <Restaurantes
+                  descricao={r.descricao}
+                  capa={r.capa}
+                  tipo={r.tipo}
+                  titulo={r.titulo}
+                  destacado={r.destacado}
+                  avaliacao={r.avaliacao}
+                  to={`cardapio/${r.id}`}
+                />
+              </li>
+            ))}
 
-        {$variant === 'prato' &&
-          items.map((prato) => (
-            <Pratos
-              key={prato.id}
-              description={prato.description}
-              image={prato.image}
-              title={prato.title}
-              to={prato.to}
-            />
-          ))}
-      </List>
-    </div>
-  </Container>
-)
+          {$variant === 'prato' &&
+            cardapio?.map((prato) => (
+              <li key={prato.id}>
+                <Cardapio
+                  descricao={prato.descricao}
+                  imagem={prato.foto}
+                  titulo={prato.nome}
+                  preco={prato.preco}
+                  porcao={prato.porcao}
+                  to=""
+                />
+              </li>
+            ))}
+        </List>
+      </div>
+    </Container>
+  )
+}
 
 export default ProductList
