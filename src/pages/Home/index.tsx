@@ -4,7 +4,6 @@ import { Restaurante } from '../../models/Items'
 
 import ProductList from '../../components/productList'
 import Header from '../../components/header'
-import Footer from '../../components/footer'
 
 import bannerImg from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.png'
