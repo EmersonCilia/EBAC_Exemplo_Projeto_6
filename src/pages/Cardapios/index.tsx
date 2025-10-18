@@ -7,7 +7,6 @@ import logo from '../../assets/images/logo.png'
 
 import ProductList from '../../components/productList'
 import Banner from '../../components/banner'
-import Footer from '../../components/footer'
 
 const Cardapio = () => {
   const { id } = useParams()
@@ -32,7 +31,6 @@ const Cardapio = () => {
         titulo={restaurante.titulo}
       />
       <ProductList cardapio={restaurante.cardapio} $variant="prato" />
-      <Footer />
     </>
   )
 }

@@ -26,7 +26,6 @@ const Home = () => {
     <>
       <Header background={bannerImg} logo={logo} />
       <ProductList restaurante={restaurantes} $variant="restaurante" />
-      <Footer />
     </>
   )
 }
