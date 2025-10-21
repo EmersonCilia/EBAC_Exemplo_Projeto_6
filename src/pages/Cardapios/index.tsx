@@ -1,24 +1,17 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-
-import { Restaurante } from '../../models/Items'
 
 import logo from '../../assets/images/logo.png'
 
 import ProductList from '../../components/productList'
 import Banner from '../../components/banner'
+import { useGetCardapioQuery } from '../../services/api'
 
 const Cardapio = () => {
   const { id } = useParams()
-  const [restaurante, setRestaurante] = useState<Restaurante>()
 
-  useEffect(() => {
-    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((data) => setRestaurante(data))
-  }, [id])
+  const { data: cardapio } = useGetCardapioQuery(id!)
 
-  if (!restaurante) {
+  if (!cardapio) {
     return <p>Carregando...</p>
   }
 
@@ -26,11 +19,11 @@ const Cardapio = () => {
     <>
       <Banner
         logo={logo}
-        tipo={restaurante.tipo}
-        capa={restaurante.capa}
-        titulo={restaurante.titulo}
+        tipo={cardapio.tipo}
+        capa={cardapio.capa}
+        titulo={cardapio.titulo}
       />
-      <ProductList cardapio={restaurante.cardapio} $variant="prato" />
+      <ProductList cardapio={cardapio.cardapio} $variant="cardapio" />
     </>
   )
 }

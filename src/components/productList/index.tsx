@@ -4,7 +4,7 @@ import Restaurantes from '../restaurantes'
 import Cardapio from '../cardapio'
 
 export type Props = {
-  $variant: 'restaurante' | 'prato'
+  $variant: 'restaurante' | 'cardapio'
   restaurante?: Restaurante[]
   cardapio?: CardapioItem[]
 }
@@ -29,16 +29,17 @@ const ProductList = ({ restaurante, $variant, cardapio }: Props) => {
               </li>
             ))}
 
-          {$variant === 'prato' &&
-            cardapio?.map((prato) => (
-              <li key={prato.id}>
+          {$variant === 'cardapio' &&
+            cardapio?.map((cardapio) => (
+              <li key={cardapio.id}>
                 <Cardapio
-                  descricao={prato.descricao}
-                  imagem={prato.foto}
-                  titulo={prato.nome}
-                  preco={prato.preco}
-                  porcao={prato.porcao}
+                  descricao={cardapio.descricao}
+                  imagem={cardapio.foto}
+                  titulo={cardapio.nome}
+                  preco={cardapio.preco}
+                  porcao={cardapio.porcao}
                   to=""
+                  prato={cardapio}
                 />
               </li>
             ))}

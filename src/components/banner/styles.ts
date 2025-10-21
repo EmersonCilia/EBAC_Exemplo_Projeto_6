@@ -52,3 +52,7 @@ export const Elements = styled.div`
     text-decoration: none;
   }
 `
+export const CartButton = styled.a`
+  display: flex;
+  cursor: pointer;
+`

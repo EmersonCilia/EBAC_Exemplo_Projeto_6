@@ -11,6 +11,9 @@ import fechar from '../../assets/images/fechar.png'
 import Button from '../button'
 
 import { useState } from 'react'
+import { CardapioItem } from '../../models/Items'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
   titulo: string
@@ -19,15 +22,30 @@ type Props = {
   preco: number
   to: string
   porcao: string
+  prato: CardapioItem
 }
 
-const Cardapio = ({ titulo, descricao, imagem, to, preco, porcao }: Props) => {
+const Cardapio = ({
+  titulo,
+  descricao,
+  imagem,
+  to,
+  preco,
+  porcao,
+  prato
+}: Props) => {
   const [isVisible, setIsVisible] = useState(false)
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(prato))
+    dispatch(open())
+  }
   const getDescricao = (descricao: string) => {
     if (descricao.length > 135) return descricao.slice(0, 132) + '...'
     return descricao
   }
-  const formataPreco = (preco = 0): string => {
+  const formataPreco = (preco: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
@@ -71,7 +89,14 @@ const Cardapio = ({ titulo, descricao, imagem, to, preco, porcao }: Props) => {
                 {porcao}
                 <br />
               </p>
-              <Button to={to} title="Adicionar ao carrinho">
+              <Button
+                to={to}
+                title="Adicionar ao carrinho"
+                onClick={() => {
+                  addToCart()
+                  setIsVisible(false)
+                }}
+              >
                 Adicionar ao carrinho - {formataPreco(preco)}
               </Button>
             </div>
