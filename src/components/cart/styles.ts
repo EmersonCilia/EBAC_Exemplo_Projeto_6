@@ -31,6 +31,17 @@ export const Sidebar = styled.aside`
   padding: 32px 16px 0;
   max-width: 360px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .card-button {
+    max-width: 100%;
+    width: 100%;
+    background-color: ${cores.brancoBackground};
+    color: ${cores.salmao};
+    text-align: center;
+    margin-top: 16px;
+  }
 `
 export const Prices = styled.p`
   padding-top: 24px;
@@ -39,12 +50,6 @@ export const Prices = styled.p`
   color: ${cores.brancoTexto};
   display: flex;
   justify-content: space-between;
-`
-export const Quantity = styled.p`
-  font-weight: bold;
-  font-size: 14px;
-  color: ${cores.brancoItens};
-  margin: 32px 0 16px;
 `
 
 export const CartItem = styled.li`

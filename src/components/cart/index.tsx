@@ -1,15 +1,8 @@
-import Button from '../button/index'
-import {
-  CartContainer,
-  CartItem,
-  Overlay,
-  Prices,
-  Quantity,
-  Sidebar
-} from './styles'
+import { CartContainer, CartItem, Overlay, Prices, Sidebar } from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
+import Button from '../button'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -58,7 +51,7 @@ const Cart = () => {
           <span>{formataPreco(getTotalPrice())}</span>
         </Prices>
         <Button title="click aqui para continuar com a compra">
-          <p>Continuar com a entrega</p>
+          Continuar com a entrega
         </Button>
       </Sidebar>
     </CartContainer>
