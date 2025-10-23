@@ -13,7 +13,7 @@ import Button from '../button'
 import { useState } from 'react'
 import { CardapioItem } from '../../models/Items'
 import { useDispatch } from 'react-redux'
-import { add, open } from '../../store/reducers/cart'
+import { add, open } from '../../store/reducers/carrinho'
 
 type Props = {
   titulo: string
@@ -57,9 +57,7 @@ const Cardapio = ({
       <Card>
         <img src={imagem} alt={titulo} />
         <Content>
-          <Headline>
-            <h3>{titulo}</h3>
-          </Headline>
+          <Headline>{titulo}</Headline>
           <Descricao>{getDescricao(descricao)}</Descricao>
           <Button
             to={to}

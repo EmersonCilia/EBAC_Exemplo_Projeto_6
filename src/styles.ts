@@ -6,6 +6,11 @@ export const cores = {
   brancoItens: '#fff',
   salmao: '#E66767'
 }
+export const breakpoint = {
+  celular: '480px',
+  tablet: '768px',
+  desktop: '1023px'
+}
 
 export const GlobalCss = createGlobalStyle`
   * {
@@ -24,6 +29,14 @@ export const GlobalCss = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+  @media (max-width: ${breakpoint.desktop}) {
+    max-width: 768px;
+    width: 80%;
+  }
+  @media (max-width: ${breakpoint.tablet}) {
+    max-width: 480px;
+    width: 100%;
   }
 `
 export const Container = styled.div`
@@ -40,5 +53,8 @@ export const Container = styled.div`
   img {
     display: block;
     margin: 0 auto;
+  }
+  @media (max-width: ${breakpoint.desktop}) {
+    max-width: 768px;
   }
 `

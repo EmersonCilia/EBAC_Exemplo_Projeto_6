@@ -1,11 +1,11 @@
 import { CartContainer, CartItem, Overlay, Prices, Sidebar } from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { close, remove } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/carrinho'
 import Button from '../button'
 
 const Cart = () => {
-  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.carrinho)
 
   const dispatch = useDispatch()
 
@@ -19,9 +19,10 @@ const Cart = () => {
     }, 0)
   }
 
-  const removeItem = (id: number) => {
-    dispatch(remove(id))
+  const removeItem = (index: number) => {
+    dispatch(remove(index))
   }
+
   const formataPreco = (preco: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -35,14 +36,14 @@ const Cart = () => {
 
       <Sidebar>
         <ul>
-          {items.map((item) => (
-            <CartItem key={item.id}>
+          {items.map((item, index) => (
+            <CartItem key={`${item.id}-${index}`}>
               <img src={item.foto} alt="." />
               <div>
                 <h3>{item.nome}</h3>
                 <span>{formataPreco(item.preco)}</span>
               </div>
-              <button onClick={() => removeItem(item.id)} type="button" />
+              <button onClick={() => removeItem(index)} type="button" />
             </CartItem>
           ))}
         </ul>

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoint, cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${cores.salmao};
   color: ${cores.brancoTexto};
   height: 100%;
+  padding: 8px;
 
   > img {
     height: 167px;
@@ -12,8 +13,13 @@ export const Card = styled.div`
     margin: 8px;
   }
 `
-export const Headline = styled.div`
+export const Headline = styled.h3`
   margin-bottom: 8px;
+
+  @media (min-width: ${breakpoint.celular}) and (max-width: ${breakpoint.desktop}) {
+    text-align: center;
+    height: 48px;
+  }
 `
 export const Content = styled.div`
   margin: 8px;
@@ -78,6 +84,11 @@ export const ModalContainer = styled.div`
     height: 16px;
     cursor: pointer;
   }
+
+  @media (max-width: ${breakpoint.celular}) {
+    width: 90%;
+    max-width: 320px;
+  }
 `
 export const ModalContent = styled.div`
   display: flex;
@@ -89,19 +100,17 @@ export const ModalContent = styled.div`
     object-fit: cover;
   }
 
-  div{
+  div {
     margin-left: 24px;
 
     h4 {
       font-size: 18px;
       font-weight: 900;
       margin-bottom: 16px;
-
     }
     .card-button {
       background-color: ${cores.brancoBackground};
       color: ${cores.salmao};
-      justify-content: center;
       margin-bottom: 16px;
     }
 
@@ -111,6 +120,18 @@ export const ModalContent = styled.div`
       margin-bottom: 16px;
     }
   }
+  @media (max-width: ${breakpoint.celular}) {
+    flex-direction: column;
+    margin: 16px;
+    align-itens: center;
 
-
-}`
+    div {
+      margin-left: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 16px;
+    }
+  }
+`

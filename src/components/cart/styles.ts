@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
-import fechar from '../../assets/images/fechar.png'
+import { breakpoint, cores } from '../../styles'
+import trashCan from '../../assets/images/lixeira-de-reciclagem.png'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -37,10 +37,14 @@ export const Sidebar = styled.aside`
   .card-button {
     max-width: 100%;
     width: 100%;
-    background-color: ${cores.brancoBackground};
+    background-color: ${cores.brancoTexto};
     color: ${cores.salmao};
     text-align: center;
     margin-top: 16px;
+  }
+
+  @media (max-width: ${breakpoint.celular}) {
+    max-width: 240px;
   }
 `
 export const Prices = styled.p`
@@ -80,14 +84,14 @@ export const CartItem = styled.li`
   }
 
   button {
-    background-image: url(${fechar});
+    background-image: url(${trashCan});
     width: 16px;
     height: 16px;
     border: none;
     background-color: transparent;
     position: absolute;
-    top: 8;
-    right: 0;
+    bottom: 8px;
+    right: 8px;
     cursor: pointer;
   }
 `

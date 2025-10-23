@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoint, cores } from '../../styles'
 
 export const BannerBackground = styled.div`
   height: 280px;
@@ -17,6 +17,10 @@ export const BannerBackground = styled.div`
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
+  }
+
+  @media (max-width: ${breakpoint.desktop}) {
+    max-width: 100%;
   }
 `
 export const Cozinha = styled.p`
@@ -37,22 +41,38 @@ export const Container = styled.div`
   text-align: left;
   color: ${cores.brancoItens};
 `
+export const CartButton = styled.a`
+  display: flex;
+  cursor: pointer;
+`
+
 export const Elements = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  p,
   a {
-    width: 200px;
     color: ${cores.salmao};
     font-size: 18px;
     font-weight: 900;
     text-decoration: none;
   }
-`
-export const CartButton = styled.a`
-  display: flex;
-  cursor: pointer;
+  @media (max-width: ${breakpoint.desktop}) {
+    max-width: 768px;
+    width: 80%;
+  }
+  @media (max-width: ${breakpoint.celular}) {
+    flex-direction: column;
+    text-align: center;
+
+    a {
+      order: 2;
+      margin-top: 16px;
+    }
+
+    img {
+      order: 1;
+    }
+  }
 `

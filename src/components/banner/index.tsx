@@ -10,7 +10,7 @@ import {
 } from './styles'
 import bannerImg from '../../assets/images/Vector.png'
 
-import { open } from '../../store/reducers/cart'
+import { open } from '../../store/reducers/carrinho'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 
@@ -23,7 +23,7 @@ export type Props = {
 
 const Banner = ({ titulo, tipo, capa, logo }: Props) => {
   const dispatch = useDispatch()
-  const { items } = useSelector((state: RootReducer) => state.cart)
+  const { items } = useSelector((state: RootReducer) => state.carrinho)
 
   const openCart = () => {
     dispatch(open())
