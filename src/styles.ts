@@ -30,13 +30,12 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
 
-  @media (max-width: ${breakpoint.desktop}) {
-    max-width: 768px;
-    width: 80%;
-  }
-  @media (max-width: ${breakpoint.tablet}) {
-    max-width: 480px;
-    width: 100%;
+    @media (max-width: ${breakpoint.desktop}) {
+      width: 80%;
+    }
+    @media (max-width: ${breakpoint.tablet}) {
+      width: 90%;
+    }
   }
 `
 export const Container = styled.div`
@@ -53,8 +52,5 @@ export const Container = styled.div`
   img {
     display: block;
     margin: 0 auto;
-  }
-  @media (max-width: ${breakpoint.desktop}) {
-    max-width: 768px;
   }
 `
