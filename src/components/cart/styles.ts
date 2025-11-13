@@ -2,6 +2,10 @@ import styled from 'styled-components'
 import { breakpoint, cores } from '../../styles'
 import trashCan from '../../assets/images/lixeira-de-reciclagem.png'
 
+type InputGroupProps = {
+  maxWidth?: string
+}
+
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -28,11 +32,14 @@ export const CartContainer = styled.div`
 export const Sidebar = styled.aside`
   background-color: ${cores.salmao};
   z-index: 1;
-  padding: 32px 16px 0;
-  max-width: 360px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  form,
+  > div {
+    padding: 32px 16px 0;
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
   .card-button {
     max-width: 100%;
@@ -40,7 +47,7 @@ export const Sidebar = styled.aside`
     background-color: ${cores.brancoTexto};
     color: ${cores.salmao};
     text-align: center;
-    margin-top: 16px;
+    margin-bottom: 8px;
   }
 
   @media (max-width: ${breakpoint.celular}) {
@@ -54,6 +61,7 @@ export const Prices = styled.p`
   color: ${cores.brancoTexto};
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
 `
 
 export const CartItem = styled.li`
@@ -94,4 +102,61 @@ export const CartItem = styled.li`
     right: 8px;
     cursor: pointer;
   }
+`
+
+export const InputGroup = styled.div<InputGroupProps>`
+
+  max-width: ${(props) => props.maxWidth || ''};
+  width: 100%;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &.cardCode {
+    max-width: 88px;
+  }
+
+  input, InputMask {
+    background-color: ${cores.brancoBackground};
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid ${cores.brancoItens};
+    width: 100%;
+    margin-bottom: 8px;
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+
+
+
+  @media (max-width: ${breakpoint.tablet}{
+    margin-top: 16px;
+  })
+`
+export const Titulo = styled.h3`
+  font-size: 16px;
+  font-weight: 700px;
+  margin-bottom: 16px;
+`
+export const Form = styled.div`
+  margin-bottom: 16px;
+`
+
+export const Row = styled.div`
+  display: flex;
+  gap: 32px;
+`
+
+export const ConfirmationParagraph = styled.p`
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 400px;
+  margin-bottom: 24px;
 `

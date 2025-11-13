@@ -35,9 +35,12 @@ const carrrinhoSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    clear: (state) => {
+      state.items = []
     }
   }
 })
 
-export const { add, open, close, remove } = carrrinhoSlice.actions
+export const { add, open, close, remove, clear } = carrrinhoSlice.actions
 export default carrrinhoSlice.reducer
