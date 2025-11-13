@@ -6,10 +6,14 @@ import ProductList from '../../components/productList'
 import Banner from '../../components/banner'
 import { useGetCardapioQuery } from '../../services/api'
 
-const Cardapio = () => {
-  const { id } = useParams()
+type CardapioParams = {
+  id: string
+}
 
-  const { data: cardapio } = useGetCardapioQuery(id!)
+const Cardapio = () => {
+  const { id } = useParams() as CardapioParams
+
+  const { data: cardapio } = useGetCardapioQuery(id)
 
   if (!cardapio) {
     return <p>Carregando...</p>
