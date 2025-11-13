@@ -26,8 +26,7 @@ const Cart = () => {
     'cart' | 'address' | 'payment' | 'confirmation'
   >('cart')
   const dispatch = useDispatch()
-  const [purchase, { data, isSuccess, isLoading, reset }] =
-    usePurchaseMutation()
+  const [purchase, { data, isSuccess, reset }] = usePurchaseMutation()
 
   const closeCart = () => {
     dispatch(close())
