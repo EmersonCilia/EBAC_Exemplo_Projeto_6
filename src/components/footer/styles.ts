@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Container = styled.div`
   min-height: 298px;
-  background-color: ${cores.brancoTexto};
+  background-color: ${colors.brancoTexto};
   padding: 40px 0;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,8 @@ export const SocialMedia = styled.div`
   gap: 8px;
 `
 
-export const Texto = styled.p`
-  color: ${cores.salmao};
+export const Text = styled.p`
+  color: ${colors.salmao};
   font-size: 10px;
   text-align: center;
 `

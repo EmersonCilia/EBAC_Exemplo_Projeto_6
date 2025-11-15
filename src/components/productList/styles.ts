@@ -14,8 +14,8 @@ export const Container = styled.section`
 export const List = styled.ul<Props>`
   display: grid;
   grid-template-columns: ${({ $variant }) =>
-    $variant === 'cardapio' ? '1fr 1fr 1fr' : '1fr 1fr'};
-  gap: ${({ $variant }) => ($variant === 'cardapio' ? '32px' : '48px 80px')};
+    $variant === 'menu' ? '1fr 1fr 1fr' : '1fr 1fr'};
+  gap: ${({ $variant }) => ($variant === 'menu' ? '32px' : '48px 80px')};
   margin-bottom: 40px;
 
   @media (max-width: ${breakpoint.tablet}) {
@@ -26,7 +26,7 @@ export const List = styled.ul<Props>`
 
   @media (min-width: ${breakpoint.tablet}) and (max-width: ${breakpoint.desktop}) {
     grid-template-columns: ${({ $variant }) =>
-      $variant === 'cardapio' ? '1fr 1fr' : '1fr'};
+      $variant === 'menu' ? '1fr 1fr' : '1fr'};
     justify-items: center;
     align-items: center;
   }

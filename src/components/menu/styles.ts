@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { breakpoint, cores } from '../../styles'
+import { breakpoint, colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.salmao};
-  color: ${cores.brancoTexto};
+  background-color: ${colors.salmao};
+  color: ${colors.brancoTexto};
   height: 100%;
   padding: 8px;
 
@@ -26,8 +26,8 @@ export const Content = styled.div`
 
   .card-button {
     display: flex;
-    background-color: ${cores.brancoBackground};
-    color: ${cores.salmao};
+    background-color: ${colors.brancoBackground};
+    color: ${colors.salmao};
     width: 100%;
     justify-content: center;
   }
@@ -71,10 +71,10 @@ export const Modal = styled.div`
 export const ModalContainer = styled.div`
   width: 100%;
   z-index: 1;
-  background-color: ${cores.salmao};
+  background-color: ${colors.salmao};
   display: flex;
   flex-direction: column;
-  color: ${cores.brancoItens};
+  color: ${colors.brancoItens};
 
   > img {
     align-self: flex-end;
@@ -109,8 +109,8 @@ export const ModalContent = styled.div`
       margin-bottom: 16px;
     }
     .card-button {
-      background-color: ${cores.brancoBackground};
-      color: ${cores.salmao};
+      background-color: ${colors.brancoBackground};
+      color: ${colors.salmao};
       margin-bottom: 16px;
     }
 

@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.brancoItens};
-  color: ${cores.salmao};
+  background-color: ${colors.brancoItens};
+  color: ${colors.salmao};
   position: relative;
-  border: 1px solid ${cores.salmao};
+  border: 1px solid ${colors.salmao};
   height: 100%;
 
   > img {
@@ -25,7 +25,7 @@ export const Headline = styled.div`
 export const Content = styled.div`
   margin: 8px;
 `
-export const Nota = styled.span`
+export const Grade = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -33,7 +33,7 @@ export const Nota = styled.span`
   font-weight: 700;
   margin-bottom: 16px;
 `
-export const Descricao = styled.p`
+export const Description = styled.p`
   line-height: 22px;
   min-height: calc(22px * 5);
   font-size: 14px;

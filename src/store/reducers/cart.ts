@@ -1,28 +1,28 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { CardapioItem } from '../../models/Items'
+import { MenuItem } from '../../models/Items'
 
-type CarrinhoState = {
-  items: CardapioItem[]
+type CartState = {
+  items: MenuItem[]
   isOpen: boolean
 }
 
-const initialState: CarrinhoState = {
+const initialState: CartState = {
   items: [],
   isOpen: false
 }
 
-const carrrinhoSlice = createSlice({
+const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<CardapioItem>) => {
-      const produto = state.items.find((item) => item.id === action.payload.id)
+    add: (state, action: PayloadAction<MenuItem>) => {
+      const product = state.items.find((item) => item.id === action.payload.id)
 
-      if (produto) {
-        const janela = window.confirm(
+      if (product) {
+        const confirmationWindow = window.confirm(
           'O prato já está no carrinho. Deseja adicionar mesmo assim?'
         )
-        if (!janela) return
+        if (!confirmationWindow) return
       }
 
       state.items.push(action.payload)
@@ -42,5 +42,5 @@ const carrrinhoSlice = createSlice({
   }
 })
 
-export const { add, open, close, remove, clear } = carrrinhoSlice.actions
-export default carrrinhoSlice.reducer
+export const { add, open, close, remove, clear } = cartSlice.actions
+export default cartSlice.reducer

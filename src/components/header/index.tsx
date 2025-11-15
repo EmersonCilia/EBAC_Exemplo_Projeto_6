@@ -1,4 +1,4 @@
-import { Titulo, Logo } from './styles'
+import { Title, Logo } from './styles'
 import { Container } from '../../styles'
 
 type Props = {
@@ -9,9 +9,9 @@ type Props = {
 const Header = ({ background, logo }: Props) => (
   <Container style={{ backgroundImage: `url(${background})` }}>
     <Logo src={logo} alt="Efood" />
-    <Titulo className="container">
+    <Title className="container">
       Viva experiências gastronômicas <br /> no conforto da sua casa
-    </Titulo>
+    </Title>
   </Container>
 )
 

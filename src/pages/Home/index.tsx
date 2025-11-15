@@ -1,6 +1,5 @@
 import ProductList from '../../components/productList'
 import Header from '../../components/header'
-
 import bannerImg from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.png'
 import { useGetRestaurantesQuery } from '../../services/api'
@@ -15,7 +14,7 @@ const Home = () => {
   return (
     <>
       <Header background={bannerImg} logo={logo} />
-      <ProductList restaurante={restaurante} $variant="restaurante" />
+      <ProductList restaurant={restaurante} $variant="restaurant" />
     </>
   )
 }

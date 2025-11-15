@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
-export const Titulo = styled.h1`
+export const Title = styled.h1`
   font-size: 36px;
   font-weight: 900;
   min-height: 80px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: ${cores.salmao};
+  color: ${colors.salmao};
   padding: 32px 0;
 `
 

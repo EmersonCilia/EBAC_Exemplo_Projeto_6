@@ -1,13 +1,14 @@
-import { Container, SocialMedia, Texto } from './styles'
+import * as S from './styles'
+
 import logo from '../../assets/images/logo.png'
 import instagram from '../../assets/images/instagram.png'
 import twitter from '../../assets/images/twitter.png'
 import facebook from '../../assets/images/facebook.png'
 
 const Footer = () => (
-  <Container>
+  <S.Container>
     <img src={logo} alt="Efood" />
-    <SocialMedia>
+    <S.SocialMedia>
       <a href="#">
         <img src={instagram} alt="instagram" />
       </a>
@@ -17,13 +18,13 @@ const Footer = () => (
       <a href="#">
         <img src={facebook} alt="facebook" />
       </a>
-    </SocialMedia>
-    <Texto>
+    </S.SocialMedia>
+    <S.Text>
       A efood é uma plataforma para divulgação de estabelecimentos, a
       responsabilidade pela entrega, qualidade <br /> dos produtos é toda do
       estabelecimento contratado.
-    </Texto>
-  </Container>
+    </S.Text>
+  </S.Container>
 )
 
 export default Footer

@@ -1,45 +1,46 @@
 import { Container, List } from './styles'
-import { CardapioItem, Restaurante } from '../../models/Items'
-import Restaurantes from '../restaurantes'
-import Cardapio from '../cardapio'
+import { MenuItem, Restaurant } from '../../models/Items'
+
+import Restaurants from '../restaurants'
+import Menu from '../menu'
 
 export type Props = {
-  $variant: 'restaurante' | 'cardapio'
-  restaurante?: Restaurante[]
-  cardapio?: CardapioItem[]
+  $variant: 'restaurant' | 'menu'
+  restaurant?: Restaurant[]
+  menu?: MenuItem[]
 }
 
-const ProductList = ({ restaurante, $variant, cardapio }: Props) => {
+const ProductList = ({ restaurant, $variant, menu }: Props) => {
   return (
     <Container>
       <div className="container">
         <List $variant={$variant}>
-          {$variant === 'restaurante' &&
-            restaurante?.map((r) => (
+          {$variant === 'restaurant' &&
+            restaurant?.map((r) => (
               <li key={r.id}>
-                <Restaurantes
-                  descricao={r.descricao}
-                  capa={r.capa}
-                  tipo={r.tipo}
-                  titulo={r.titulo}
-                  destacado={r.destacado}
-                  avaliacao={r.avaliacao}
-                  to={`cardapio/${r.id}`}
+                <Restaurants
+                  description={r.descricao}
+                  cape={r.capa}
+                  type={r.tipo}
+                  title={r.titulo}
+                  hightlight={r.destacado}
+                  evalutation={r.avaliacao}
+                  to={`menu/${r.id}`}
                 />
               </li>
             ))}
 
-          {$variant === 'cardapio' &&
-            cardapio?.map((cardapio) => (
-              <li key={cardapio.id}>
-                <Cardapio
-                  descricao={cardapio.descricao}
-                  imagem={cardapio.foto}
-                  titulo={cardapio.nome}
-                  preco={cardapio.preco}
-                  porcao={cardapio.porcao}
+          {$variant === 'menu' &&
+            menu?.map((item) => (
+              <li key={item.id}>
+                <Menu
+                  description={item.descricao}
+                  image={item.foto}
+                  title={item.nome}
+                  price={item.preco}
+                  portion={item.porcao}
                   to=""
-                  prato={cardapio}
+                  item={item}
                 />
               </li>
             ))}

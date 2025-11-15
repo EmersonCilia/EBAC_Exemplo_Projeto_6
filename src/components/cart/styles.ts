@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoint, cores } from '../../styles'
+import { breakpoint, colors } from '../../styles'
 import trashCan from '../../assets/images/lixeira-de-reciclagem.png'
 
 type InputGroupProps = {
@@ -30,7 +30,7 @@ export const CartContainer = styled.div`
   }
 `
 export const Sidebar = styled.aside`
-  background-color: ${cores.salmao};
+  background-color: ${colors.salmao};
   z-index: 1;
   form,
   > div {
@@ -44,8 +44,8 @@ export const Sidebar = styled.aside`
   .card-button {
     max-width: 100%;
     width: 100%;
-    background-color: ${cores.brancoTexto};
-    color: ${cores.salmao};
+    background-color: ${colors.brancoTexto};
+    color: ${colors.salmao};
     text-align: center;
     margin-bottom: 8px;
   }
@@ -58,7 +58,7 @@ export const Prices = styled.p`
   padding-top: 24px;
   font-weight: bold;
   font-size: 14px;
-  color: ${cores.brancoTexto};
+  color: ${colors.brancoTexto};
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
@@ -67,7 +67,7 @@ export const Prices = styled.p`
 export const CartItem = styled.li`
   display: flex;
   padding: 8px;
-  background-color: ${cores.brancoTexto};
+  background-color: ${colors.brancoTexto};
   margin-bottom: 16px;
   position: relative;
 
@@ -79,7 +79,7 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.salmao};
+    color: ${colors.salmao};
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 16px;
@@ -87,7 +87,7 @@ export const CartItem = styled.li`
 
   span {
     display: block;
-    color: ${cores.salmao};
+    color: ${colors.salmao};
     font-size: 14px;
   }
 
@@ -121,10 +121,10 @@ export const InputGroup = styled.div<InputGroupProps>`
   }
 
   input, InputMask {
-    background-color: ${cores.brancoBackground};
+    background-color: ${colors.brancoBackground};
     height: 32px;
     padding: 0 8px;
-    border: 1px solid ${cores.brancoItens};
+    border: 1px solid ${colors.brancoItens};
     width: 100%;
     margin-bottom: 8px;
 
@@ -140,7 +140,7 @@ export const InputGroup = styled.div<InputGroupProps>`
     margin-top: 16px;
   })
 `
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-size: 16px;
   font-weight: 700px;
   margin-bottom: 16px;

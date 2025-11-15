@@ -1,4 +1,4 @@
-export interface CardapioItem {
+export interface MenuItem {
   id: number
   nome: string
   descricao: string
@@ -7,7 +7,7 @@ export interface CardapioItem {
   foto: string
 }
 
-export type Restaurante = {
+export type Restaurant = {
   capa: string
   id: number
   titulo: string
@@ -15,5 +15,5 @@ export type Restaurante = {
   avaliacao: number
   tipo: string
   descricao: string
-  cardapio: CardapioItem[]
+  cardapio: MenuItem[]
 }

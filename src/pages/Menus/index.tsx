@@ -6,16 +6,16 @@ import ProductList from '../../components/productList'
 import Banner from '../../components/banner'
 import { useGetCardapioQuery } from '../../services/api'
 
-type CardapioParams = {
+type MenuParams = {
   id: string
 }
 
-const Cardapio = () => {
-  const { id } = useParams() as CardapioParams
+const Menu = () => {
+  const { id } = useParams() as MenuParams
 
-  const { data: cardapio } = useGetCardapioQuery(id)
+  const { data: menu } = useGetCardapioQuery(id)
 
-  if (!cardapio) {
+  if (!menu) {
     return <p>Carregando...</p>
   }
 
@@ -23,13 +23,13 @@ const Cardapio = () => {
     <>
       <Banner
         logo={logo}
-        tipo={cardapio.tipo}
-        capa={cardapio.capa}
-        titulo={cardapio.titulo}
+        type={menu.tipo}
+        cape={menu.capa}
+        title={menu.titulo}
       />
-      <ProductList cardapio={cardapio.cardapio} $variant="cardapio" />
+      <ProductList menu={menu.cardapio} $variant="menu" />
     </>
   )
 }
 
-export default Cardapio
+export default Menu
