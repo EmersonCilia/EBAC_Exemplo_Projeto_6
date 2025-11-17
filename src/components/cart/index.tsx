@@ -379,8 +379,8 @@ const Cart = () => {
                         <label htmlFor="expiresMonth">Mês de vencimento</label>
                         <InputMask
                           id="expiresMonth"
-                          type="number"
-                          name="expiresMonth"
+                          type="text"
+                          inputMode="numeric"
                           value={form.values.expiresMonth}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
@@ -394,7 +394,8 @@ const Cart = () => {
                         <label htmlFor="expiresYear">Ano de vencimento</label>
                         <InputMask
                           id="expiresYear"
-                          type="number"
+                          type="text"
+                          inputMode="numeric"
                           name="expiresYear"
                           value={form.values.expiresYear}
                           onChange={form.handleChange}
